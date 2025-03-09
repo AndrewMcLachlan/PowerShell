@@ -4,7 +4,7 @@
  RootModule = '.\Asm.GitHelpers.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.2'
+ModuleVersion = '1.0.4'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Core')
@@ -25,7 +25,7 @@ Copyright = '(c) Andrew McLachlan. All rights reserved.'
  Description = 'Helpers for Git'
 
 # Minimum version of the PowerShell engine required by this module
-# PowerShellVersion = ''
+PowerShellVersion = '7.0'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''

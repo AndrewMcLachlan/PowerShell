@@ -29,11 +29,10 @@ Function Remove-GitBranches
     foreach ($branch in $branches)
     {
         $branchName = $branch.Line.Trim()
-        Write-Host "Deleting branch: $branchName"
+        Write-Verbose "Deleting branch: $branchName using git branch $switch $branchName"
         if ($WhatIf) { continue }
         git branch $switch $branchName
     }
-    #$branches | ForEach-Object | git branch -d $_.Line
 }
 
 Export-ModuleMember -Cmdlet Remove-GitBranches

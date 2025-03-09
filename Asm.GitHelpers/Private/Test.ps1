@@ -1,3 +1,3 @@
-Import-Module .\Asm.GitHelpers.psm1 -Force
+Import-Module ..\Asm.GitHelpers.psm1 -Force
 
 Remove-GitBranches
