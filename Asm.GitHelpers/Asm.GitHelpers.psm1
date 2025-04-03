@@ -21,14 +21,14 @@ Function Remove-GitBranches
     }
     else
     {
-        $branches = git branch --merged | Select-String -Pattern "(^\*|main|master)" -NotMatch
+        $branches = git branch --merged | Select-String -Pattern "(^\*|main|master)" -NotMatch | ForEach-Object { $_.Line }
     }
 
     $switch = $Force ? "-D" : "-d"
 
     foreach ($branch in $branches)
     {
-        $branchName = $branch.Line.Trim()
+        $branchName = $branch.Trim()
         Write-Verbose "Deleting branch: $branchName using git branch $switch $branchName"
         if ($WhatIf) { continue }
         git branch $switch $branchName
